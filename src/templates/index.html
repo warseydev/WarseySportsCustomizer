@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Warsey - Customize Your T-Shirt</title>
+  <link rel="icon" type="image/png" href="/content/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/content/home.css">
+</head>
+<body>
+  <div class="product">
+	<div id="productImages">
+		<div id="sliderImages">
+			<div id="tshirt" class="productImage" style="background-image: url('/content/none.webp');"></div>
+			</div>
+		<div id="sliderIndex">
+		</div>
+	</div>
+	<div class="productInfo">
+        <img src="/content/warsey-sport-solutions.webp" class="warseylogo">
+		<h1 class="title">Customize Your T-Shirt</h1>
+		<span class="productId">Product: Supporter-Custom-Tshirt-Warsey</span>
+		<p>With the help of the Warsey Sports Customizer you now can personalize & customize any of the Supporters T-Shirts to your liking, share your creation with other people or order it online and have arrive right at your door-step.</p>
+		<label>Country: <a href="https://www.warseysports.com/shop/">Shop</a></label>
+		<div class="select-wrapper countryselect" id="country" name="country">
+			<select onchange="RevertToNone();" id="countrylist">
+                <option value="tunisia">Tunisia</option>
+				<option value="costarica">Costa Rica</option>
+				<option value="france">France</option>
+				<option value="ghana">Ghana</option>
+				<option value="germany">Germany</option>
+				<option value="portugal">Portugal</option>
+				<option value="australia">Australia</option>
+				<option value="japan">Japan</option>
+				<option value="mexico">Mexico</option>
+			</select>
+		</div>
+        <label>Model: </label>
+		<div class="select-wrapper" id="model" id="model">
+			<select onchange="ChangeModel(event);">
+                <option value="none" data-chained="tunisia costarica ghana germany france portugal australia japan mexico">None</option>
+                <option value="gotunisia-red" data-chained="tunisia">Go Tunisia Red Model</option>
+				<option value="gotunisia-white" data-chained="tunisia">Go Tunisia White Model:1</option>
+				<option value="gotunisia-white2" data-chained="tunisia">Go Tunisia White Model:2</option>
+				<option value="gotunisia-black" data-chained="tunisia">Go Tunisia Black/Gold Model</option>
+                <option value="vamoscostarica" data-chained="costarica">Vamos Costa Rica</option>
+				<option value="gocostarica-red" data-chained="costarica">Go Costa Rica Red</option>
+				<option value="goghana-model1" data-chained="ghana">Go Ghana Model:1</option>
+				<option value="goghana-model2" data-chained="ghana">Go Ghana Model:2</option>
+				<option value="gogermany-model1" data-chained="germany">Go Germany Model:1</option>
+				<option value="gogermany-model2" data-chained="germany">Go Germany Model:2</option>
+				<option value="gofrance-model1" data-chained="france">Go France Model:1</option>
+				<option value="gofrance-model2" data-chained="france">Go France Model:2</option>
+				<option value="gofrance-model3" data-chained="france">Go France Model:3</option>
+				<option value="goptg-model1" data-chained="portugal">Go Portugal Model:1</option>
+				<option value="goptg-model2" data-chained="portugal">Go Portugal Model:2</option>
+				<option value="goptg-model3" data-chained="portugal">Go Portugal Model:3</option>
+				<option value="goptg-model4" data-chained="portugal">Go Portugal Model:4</option>
+				<option value="goau-model1" data-chained="australia">Go Australia Model:1</option>
+				<option value="goau-model2" data-chained="australia">Go Australia Model:2</option>
+				<option value="goau-model3" data-chained="australia">Go Australia Model:3</option>
+				<option value="goau-model4" data-chained="australia">Go Australia Model:4</option>
+				<option value="goau-model5" data-chained="australia">Go Australia Model:5</option>
+				<option value="gojapan-model1" data-chained="japan">Go Japan Model:1</option>
+				<option value="gojapan-model2" data-chained="japan">Go Japan Model:2</option>
+				<option value="gojapan-model3" data-chained="japan">Go Japan Model:3</option>
+				<option value="gojapan-model4" data-chained="japan">Go Japan Model:4</option>
+				<option value="gojapan-model5" data-chained="japan">Go Japan Model:5</option>
+				<option value="gomexico-model1" data-chained="mexico">Go Mexico Model:1</option>
+				<option value="gomexico-model2" data-chained="mexico">Go Mexico Model:2</option>
+			</select>
+		</div>
+        <div class="namediv">
+            <label for="tshirttext">Your Name:</label>
+            <input class="name" type="text" id="name" name="name" placeholder="Your Name Here" maxlength="16">
+        </div>
+		<div class="sharecode">
+			<a onclick="GenerateShareCode();">Get Your Share Code</a>
+		</div>
+	</div>
+
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script src="/content/jquery.chained.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script id="rendered-js" src="/content/render.js"></script>
+<script id="rendered-js" src="/content/home-server.js"></script>
+</body>
+</html>
+ 

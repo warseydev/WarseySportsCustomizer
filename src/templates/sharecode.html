@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Warsey - Share Code</title>
+  <link rel="icon" type="image/png" href="/content/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/content/sharecode.css">
+</head>
+<body>
+  <div class="product">
+	<div id="productImages">
+		<div id="sliderImages">
+			<div id="tshirt" class="productImage" style="background-image: url('{{ modelurl }}');"></div>
+			</div>
+		<div id="sliderIndex">
+		</div>
+	</div>	
+	<div class="productInfo">
+        <a href="/"><img src="/content/warsey-sport-solutions.webp" class="warseylogo"></a>
+		<h1 class="title">Your Personalized T-Shirt </h1>
+		<h2>SHARE CODE:</h2>
+        <h1 id="codeshare" class="sharecode" onclick="copyToClipboard('codeshare');">{{ code }}</h1>
+        <span class="productId">Click to copy.</span>
+		<label>Name: {{ name }}</label>
+        <label>Model: {{ model }}<a>[codename]</a></label>
+        <p>You can use this share code when adding your Supporter T-Shirt to cart on <a href="https://www.warseysports.com/shop/">Warsey Sports's Shop</a> or to share this Personalized T-Shirt to your friends or family (The link to this page may also be usable).</p>
+		<div class="sharecode">
+			<a href="https://www.warseysports.com/shop/">Continue Shopping</a>
+		</div>
+        <div class="sharecode">
+			<a href="/">Create another one</a>
+		</div>
+        <input type="text" id="copyingText" style="visibility: hidden;"/>
+	</div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script src="/content/sharecode.js"></script>
+<script src="/content/jquery.chained.min.js"></script>
+<script id="rendered-js" src="/content/render.js"></script>
+</body>
+</html>
+ 

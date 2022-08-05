@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+body {
+    background-color: #F4F5F5;
+}
+  
+.product {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+  .product #productImages {
+    height: 100%;
+    width: 40%;
+    border: 10px solid #E0DDC2;
+    position: relative;
+    overflow: hidden;
+  }
+  .product #productImages #sliderIndex {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -200%);
+    justify-content: center;
+    width: 100%;
+  }
+  .product #productImages #sliderIndex .slide {
+    width: 30px;
+    height: 10px;
+    margin: 0 10px;
+    background-color: rgba(255, 255, 255, 0.6);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.2s ease-in-out;
+  }
+  .product #productImages #sliderIndex .slide.active, .product #productImages #sliderIndex .slide:hover {
+    cursor: pointer;
+    background-color: white;
+  }
+  .product #productImages #sliderImages {
+    position: relative;
+    width: 400%;
+    height: 100%;
+    display: flex;
+    transform: translateX(0);
+    will-change: transform;
+    background-color: #D6D6D7;
+    transition: transform 0.5s ease-in-out;
+  }
+  .product #productImages .productImage {
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+  }
+  .product .productInfo {
+    width: 60%;
+    max-width: 750px;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 70px 50px 20px;
+    margin: 0 auto;
+  }
+  .product .productInfo h1 {
+    text-transform: uppercase;
+    font-size: 42px;
+    margin-bottom: 10px;
+  }
+  .product .productInfo .productId {
+    margin-bottom: 40px;
+    display: block;
+    font-style: italic;
+    color: #BBB;
+    letter-spacing: 1.1px;
+  }
+  .product .productInfo .subProdInfo {
+    margin-bottom: 40px;
+    font-weight: normal;
+    display: flex;
+    align-items: center;
+  }
+  .product .productInfo .subProdInfo .price {
+    font-size: 42px;
+    margin-right: 20px;
+  }
+  .product .productInfo .subProdInfo .stock {
+    font-size: 16px;
+    font-style: italic;
+    color: green;
+  }
+  .product .productInfo p {
+    color: #333;
+    letter-spacing: 0.5px;
+    margin-bottom: 20px;
+  }
+  .product .productInfo label {
+    font-weight: bold;
+    margin-bottom: 15px;
+    display: flex;
+    letter-spacing: 0.2px;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .product .productInfo label a {
+    text-decoration: none;
+    font-weight: normal;
+    font-size: 12px;
+    text-align: right;
+  }
+  .product .productInfo .select-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .product .productInfo .select-wrapper:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    border: 9px solid transparent;
+    transform: translate(-120%, -50%) rotate(0deg);
+    transform-origin: left 30%;
+    transition: transform 0.2s ease-in-out;
+    border-left-color: #252525;
+  }
+  .product .productInfo .select-wrapper:hover {
+    cursor: pointer;
+  }
+  .product .productInfo .select-wrapper:hover:after {
+    transform: translate(-120%, -50%) rotate(90deg);
+  }
+  .product .productInfo .select-wrapper select {
+    -webkit-appearance: none;
+    -webkit-moz: none;
+    -moz-appearance: none;
+         appearance: none;
+    padding: 10px 90px 10px 20px;
+    width: 100%;
+    background: transparent;
+    font-size: 16px;
+    border-radius: 0px;
+    border: 1px solid #999;
+    font-weight: 300;
+    outline: none;
+  }
+  .product .productInfo .select-wrapper select:hover {
+    cursor: pointer;
+  }
+  .product .productInfo .colors {
+    margin-top: 25px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .product .productInfo .colors .color {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+    border: 1px solid #666;
+    border-radius: 50%;
+  }
+  .product .productInfo .colors .color.selected, .product .productInfo .colors .color:hover {
+    cursor: pointer;
+    border-color: white;
+    box-shadow: 0px 0px 0px 3px black;
+  }
+  .product .productInfo .sharecode {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+  }
+  .product .productInfo .sharecode .qntySection {
+    display: flex;
+    align-items: center;
+  }
+  .product .productInfo .sharecode .qntySection .btn {
+    padding: 10px 15px;
+    margin: 0 10px;
+    transform: scale(1);
+    transition: transform 0.2s ease-in-out;
+  }
+  .product .productInfo .sharecode .qntySection .btn:hover {
+    cursor: pointer;
+    transform: scale(1.3);
+  }
+  .product .productInfo .sharecode .qntySection span {
+    font-size: 25px;
+  }
+  .product .productInfo .sharecode a {
+    width: 100%;
+    text-decoration: none;
+    text-align: center;
+    color: black;
+    border: 1px solid black;
+    padding: 12px 20px;
+    background-color: white;
+    color: black;
+    text-transform: uppercase;
+    letter-spacing: 1.1px;
+    transition: 0.15s ease-in-out;
+  }
+  .product .productInfo .sharecode a:hover {
+    cursor: pointer;
+    background-color: #E0DDC2;
+    color: black;
+  }
+  @media screen and (max-width: 700px) {
+    .product #productImages {
+      width: 100%;
+      height: 90%;
+    }
+    .product .productInfo {
+      width: 100%;
+      height: initial;
+      padding-top: 30px;
+      display: flex;
+      flex-direction: column;
+    }
+    .product .productInfo .title {
+      font-size: 28px;
+    }
+  }
+@media screen and (max-width: 400px) {
+    .product .productInfo .sharecode {
+    flex-direction: column;
+}
+.product .productInfo .sharecode a {
+        margin-top: 20px;
+        }
+}
+
+/* Warsey CSS */
+
+.warseylogo {
+    width: 25%;
+    height: auto;
+}
+
+.name {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    -webkit-appearance: none;
+    -webkit-moz: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+    background: transparent;
+    font-size: 16px;
+    border-radius: 0px;
+    border: 1px solid #999;
+    font-weight: 300;
+    padding: 10px 90px 10px 20px;
+    outline: none;
+}
+
+.namediv {
+    padding-top: 10px;
+    margin-bottom: -10px;
+}
+
+.countryselect {
+    margin-bottom: 15px;
+}
