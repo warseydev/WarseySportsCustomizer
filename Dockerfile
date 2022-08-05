@@ -1,7 +1,7 @@
 FROM alpine:latest
 COPY src /usr/share/warseyapifrontend/
 
-EXPOSE 8080
+EXPOSE 7000
 
 WORKDIR /usr/share/warseyapifrontend/
 
