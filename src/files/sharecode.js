@@ -7,5 +7,16 @@ function copyToClipboard() {
     tempTextbox.select();
     document.execCommand("Copy");
     tempTextbox.style="visibility: hidden;"
-    console.log('done');
+    CopiedAnimation();
 }
+
+function CopiedAnimation() {
+    document.getElementById("copynotif").classList.add("copyanimation");
+    setTimeout( function() {
+        document.getElementById("copynotif").classList.remove("copyanimation");
+    }, 1000);
+}
+
+$(document).ready(function(){                                
+    document.getElementById("tshirtlink").textContent=window.location.href;
+});

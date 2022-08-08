@@ -1,31 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#">
 <head>
   <meta charset="UTF-8">
   <title>Warsey - Customize Your T-Shirt</title>
   <link rel="icon" type="image/png" href="/content/favicon.png">
+  <meta property="og:title" content="Warsey Customizer - Customize your Supporters T-Shirt"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:image" content="/content/fbposter.jpg"/>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="/content/home.css">
 </head>
 <body>
   <div class="product">
 	<div id="productImages">
-		<div id="sliderImages">
-			<div id="tshirt" class="productImage" style="background-image: url('/content/none.webp');"></div>
-			</div>
+	<a href="#name">
+		<div id="sliderImages" class="custom-tshirt">
+			<div id="tshirt" class="productImage" style="background-image: url('/content/none.gif');"></div>
+		</div>
+	</a>
 		<div id="sliderIndex">
 		</div>
 	</div>
 	<div class="productInfo">
         <img src="/content/warsey-sport-solutions.webp" class="warseylogo">
-		<h1 class="title">Customize Your T-Shirt</h1>
+		<h1 class="title">Customize <span class="titletext">Your T-Shirt</span></h1>
 		<span class="productId">Product: Supporter-Custom-Tshirt-Warsey</span>
 		<p>With the help of the Warsey Sports Customizer you now can personalize & customize any of the Supporters T-Shirts to your liking, share your creation with other people or order it online and have arrive right at your door-step.</p>
 		<label>Country: <a href="https://www.warseysports.com/shop/">Shop</a></label>
 		<div class="select-wrapper countryselect" id="country" name="country">
 			<select onchange="RevertToNone();" id="countrylist">
-                <option value="tunisia">Tunisia</option>
+				<option value="argentina">Argentina (Coming Soon)</option>
 				<option value="costarica">Costa Rica</option>
+				<option value="tunisia">Tunisia</option>
 				<option value="france">France</option>
 				<option value="ghana">Ghana</option>
 				<option value="germany">Germany</option>
@@ -41,7 +47,6 @@
 				<option value="us">United States (Coming Soon)</option>
 				<option value="wales">Wales (Coming Soon)</option>
 				<option value="iran">Iran (Coming Soon)</option>
-				<option value="argentina">Argentina (Coming Soon)</option>
 				<option value="poland">Poland (Coming Soon)</option>
 				<option value="saudiar">Saudi Arabia (Coming Soon)</option>
 				<option value="denmark">Denmark (Coming Soon)</option>
@@ -60,7 +65,7 @@
 		</div>
         <label>Model: </label>
 		<div class="select-wrapper" id="model" id="model">
-			<select onchange="ChangeModel(event);">
+			<select onchange="ChangeModel(event);" class="select-box">
                 <option value="none" data-chained="tunisia costarica ghana germany france portugal australia japan mexico qatar netherlands senegal ecuador england us wales iran argentina poland saudiar denmark spain belgium croatia canada morocco brazil switzerland serbia cameroon uruguay korea">None</option>
                 <option value="gotunisia-red" data-chained="tunisia">Go Tunisia Red Model</option>
 				<option value="gotunisia-white" data-chained="tunisia">Go Tunisia White Model:1</option>
@@ -97,6 +102,10 @@
             <label for="tshirttext">Your Name:</label>
             <input class="name" type="text" id="name" name="name" placeholder="Your Name Here" maxlength="16">
         </div>
+		<div class="numdiv">
+            <label for="tshirttext">Number:</label>
+            <input class="number" type="text" id="number" name="number" placeholder="12 (Coming Soon)" maxlength="2" disabled>
+        </div>
 		<div class="sharecode">
 			<a onclick="GenerateShareCode();">Get Your Share Code</a>
 		</div>
@@ -107,7 +116,7 @@
 <script src="/content/jquery.chained.min.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script id="rendered-js" src="/content/render.js"></script>
-<script id="rendered-js" src="/content/home-server.js"></script>
+<script id="rendered-js" src="/content/warseycustomizer.js"></script>
 </body>
 </html>
  

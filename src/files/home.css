@@ -8,7 +8,8 @@
 }
 
 body {
-    background-color: #F4F5F5;
+    background-color: #2b2b2b;
+    color: #fff;
 }
   
 .product {
@@ -23,7 +24,7 @@ body {
   .product #productImages {
     height: 100%;
     width: 40%;
-    border: 10px solid #E0DDC2;
+    border: 10px solid #1E9738;
     position: relative;
     overflow: hidden;
   }
@@ -79,7 +80,7 @@ body {
     margin-bottom: 10px;
   }
   .product .productInfo .productId {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     display: block;
     font-style: italic;
     color: #BBB;
@@ -101,7 +102,7 @@ body {
     color: green;
   }
   .product .productInfo p {
-    color: #333;
+    color: rgb(219, 219, 219);
     letter-spacing: 0.5px;
     margin-bottom: 20px;
   }
@@ -136,7 +137,7 @@ body {
     transform: translate(-120%, -50%) rotate(0deg);
     transform-origin: left 30%;
     transition: transform 0.2s ease-in-out;
-    border-left-color: #252525;
+    border-left-color: #e7e7e7;
   }
   .product .productInfo .select-wrapper:hover {
     cursor: pointer;
@@ -205,11 +206,11 @@ body {
     width: 100%;
     text-decoration: none;
     text-align: center;
-    color: black;
+    color: rgb(175, 175, 175);
     border: 1px solid black;
     padding: 12px 20px;
-    background-color: white;
-    color: black;
+    background-color: #eeeeee;
+    color: rgb(36, 36, 36);
     text-transform: uppercase;
     letter-spacing: 1.1px;
     transition: 0.15s ease-in-out;
@@ -247,8 +248,8 @@ body {
 /* Warsey CSS */
 
 .warseylogo {
-    width: 25%;
-    height: auto;
+    width: 189px;
+    height: 130px;
 }
 
 .name {
@@ -271,10 +272,71 @@ body {
 }
 
 .namediv {
-    padding-top: 10px;
+    padding-top: 12px;
     margin-bottom: -10px;
+}
+
+.numdiv {
+  padding-top: 22px;
+  margin-bottom: -14px;
 }
 
 .countryselect {
     margin-bottom: 15px;
+}
+
+.number {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  -webkit-appearance: none;
+  -webkit-moz: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 100%;
+  background: transparent;
+  font-size: 16px;
+  border-radius: 0px;
+  border: 1px solid #999;
+  font-weight: 300;
+  padding: 10px 90px 10px 20px;
+  outline: none;
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+select {
+  color: #fff;
+}
+
+option {
+  background-color: #414141;
+}
+
+input {
+  color: #fff;
+}
+
+a {
+  color: rgb(226, 226, 226);
+}
+
+.titletext{
+  background-color: #136925;
+}
+
+::-moz-selection {
+  color: rgb(243, 243, 243);
+  background: #0e581e;
+}
+
+::selection {
+  color: rgb(243, 243, 243);
+  background: #0e581e;
+}
+
+.custom-tshirt:hover {
+  opacity: 0.5;
+  cursor: not-allowed;
 }

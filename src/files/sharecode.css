@@ -8,7 +8,8 @@
 }
 
 body {
-    background-color: #F4F5F5;
+    background-color: #2b2b2b;
+    color: #fff;
 }
   
 .product {
@@ -23,7 +24,7 @@ body {
   .product #productImages {
     height: 100%;
     width: 40%;
-    border: 10px solid #E0DDC2;
+    border: 10px solid #1E9738;
     position: relative;
     overflow: hidden;
   }
@@ -55,6 +56,7 @@ body {
     display: flex;
     transform: translateX(0);
     will-change: transform;
+    background-color: #D6D6D7;
     transition: transform 0.5s ease-in-out;
   }
   .product #productImages .productImage {
@@ -75,10 +77,10 @@ body {
   .product .productInfo h1 {
     text-transform: uppercase;
     font-size: 42px;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
   }
   .product .productInfo .productId {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     display: block;
     font-style: italic;
     color: #BBB;
@@ -100,7 +102,7 @@ body {
     color: green;
   }
   .product .productInfo p {
-    color: #333;
+    color: rgb(219, 219, 219);
     letter-spacing: 0.5px;
     margin-bottom: 20px;
   }
@@ -135,7 +137,7 @@ body {
     transform: translate(-120%, -50%) rotate(0deg);
     transform-origin: left 30%;
     transition: transform 0.2s ease-in-out;
-    border-left-color: #252525;
+    border-left-color: #e7e7e7;
   }
   .product .productInfo .select-wrapper:hover {
     cursor: pointer;
@@ -204,16 +206,17 @@ body {
     width: 100%;
     text-decoration: none;
     text-align: center;
-    color: black;
-    border: 1px solid black;
+    color: rgb(175, 175, 175);
+    border: 1px solid #fff;
     padding: 12px 20px;
-    background-color: white;
-    color: black;
+    background-color: transparent;
+    color: #fff;
     text-transform: uppercase;
     letter-spacing: 1.1px;
     transition: 0.15s ease-in-out;
   }
   .product .productInfo .sharecode a:hover {
+    border: 1px solid #000;
     cursor: pointer;
     background-color: #E0DDC2;
     color: black;
@@ -246,10 +249,9 @@ body {
 /* Warsey CSS */
 
 .warseylogo {
-    width: 25%;
-    height: auto;
+  width: 189px;
+  height: 130px;
 }
-
 .sharecode {
     font-family: 'Bebas Neue', cursive;
     margin-bottom: -20px;
@@ -260,3 +262,75 @@ body {
     margin-bottom: -20px;
 }
 
+select {
+  color: #fff;
+}
+
+option {
+  background-color: #414141;
+}
+
+input {
+  color: #fff;
+}
+
+a {
+  color: rgb(226, 226, 226);
+}
+
+.titletext{
+  background-color: #136925;
+}
+
+::-moz-selection {
+  color: rgb(243, 243, 243);
+  background: #0e581e;
+}
+
+::selection {
+  color: rgb(243, 243, 243);
+  background: #0e581e;
+}
+
+.custom-tshirt:hover {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.sharecodebuttons {
+  margin-left: 20px;
+}
+
+.tshirtlink {
+  padding-bottom: 25px;
+}
+
+.tshirtlinkspan {
+  color: #fff;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.copynotif {
+  position: relative;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 2px;
+  margin-left: -100px;
+  visibility: hidden;
+}
+
+.copyanimation {
+  animation-name: copyanim;
+  animation-duration: 1s;
+}
+
+@keyframes copyanim {
+  0%   {left:0px; bottom:0px; visibility: visible;}
+  25%  {bottom: 20px; opacity: 0.75;}
+  50%  {bottom: 30px; opacity: 0.50;}
+  75%  {bottom: 40px; opacity: 0.25;}
+  100% {bottom: 50px; opacity: 0; visibility: hidden;}
+}
