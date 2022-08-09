@@ -66,14 +66,3 @@ def generatecode(modeljson):
     sharecode = generatenum()
     addtodb(sharecode, modeljson, hash)
     return {"sharecode": sharecode, "modeljson": modeljson}
-    
-
-
-
-    
- 
-
-    
-
-    
-  
