@@ -100,7 +100,7 @@
 		</div>
         <div class="namediv">
             <label for="tshirttext">Your Name:</label>
-            <input class="name" type="text" id="name" name="name" placeholder="Your Name Here" maxlength="16">
+            <input class="name" type="text" id="name" name="name" placeholder="Your Name Here" maxlength="16" oninput="this.value = this.value.replace(/[!@#$%^&*0-9]/g, '');">
         </div>
 		<div class="numdiv">
             <label for="tshirttext">Number:</label>
