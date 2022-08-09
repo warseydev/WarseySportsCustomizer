@@ -8,7 +8,8 @@ function ChangeModel(e) {
     if (e.target.value == "none") {
         return
     }
-    style="background-image: url('"+window.serverurl+"/api/design/tshirt?text="+window.name+"&template="+e.target.value+"');-webkit-transition: all 1s ease-in-out;-moz-transition: all 1s ease-in-out;-o-transition: all 1s ease-in-out;-ms-transition: all 1s ease-in-out;";
+    text=encodeURIComponent(window.name);
+    style="background-image: url('"+window.serverurl+"/api/design/tshirt?text="+text+"&template="+e.target.value+"');-webkit-transition: all 1s ease-in-out;-moz-transition: all 1s ease-in-out;-o-transition: all 1s ease-in-out;-ms-transition: all 1s ease-in-out;";
     document.getElementById("tshirt").style=style;
     window.model=e.target.value;
 }
@@ -23,9 +24,7 @@ $('#name').keyup(function(event) {
     }
     if($('#name').val() != lastentry) {  
         window.name=$('#name').val();  
-        text=window.name.replaceAll('&', ' ');
-        text=text.replaceAll('+', ' ');
-        text=text.replaceAll('/', ' ');   
+        text=encodeURIComponent(text);
         style="background-image: url('"+window.serverurl+"/api/design/tshirt?text="+text+"&template="+window.model+"');-webkit-transition: all 1s ease-in-out;-moz-transition: all 1s ease-in-out;-o-transition: all 1s ease-in-out;-ms-transition: all 1s ease-in-out;";
         document.getElementById("tshirt").style=style;
         window.name=text;
@@ -47,7 +46,8 @@ function GenerateShareCode() {
         swal({title: "You haven't customized your T-shirt", text: "Customize your T-Shirt in order to get a share code.", dangerMode: true});
         return
     }
-    let createlink="/create?name="+window.name+"&model="+window.model;
+    text=encodeURIComponent(window.name);
+    let createlink="/create?name="+text+"&model="+window.model;
     window.location.replace(createlink);   
 }
 
