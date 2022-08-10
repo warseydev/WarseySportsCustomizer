@@ -1,9 +1,17 @@
 from flask import Flask, request, redirect, send_file, render_template, url_for 
+from flask_limiter import Limiter
+from flask_limiter.util import get_remote_address
 from waitress import serve
 import json
 import sharecode
 
 app = Flask(__name__)
+limiter = Limiter(
+    app,
+    key_func=get_remote_address,
+    default_limits=["200 per day", "50 per hour"]
+)
+
 NServer = "https://api.warsey.com"
 
 @app.route("/")
@@ -11,6 +19,7 @@ def home():
     return render_template("index.html")
 
 @app.route("/create")
+@limiter.limit("5/hour", override_defaults=False)
 def createsharecode():
     name = request.args.get('name')
     model = request.args.get('model')
@@ -43,6 +52,10 @@ def content(file):
 @app.errorhandler(404)
 def not_found(e):
     return render_template("error.html", errorcode = "404", errormsg = "The Page You Are Trying To Access Does Not Exist.")
+
+@app.errorhandler(429)
+def not_found(e):
+    return render_template("error.html", errorcode = "429 | Too Many Requests", errormsg = "You have made too many requests in the past hour, please try again later.")
 
 @app.errorhandler(500)
 def internal_error(error):
