@@ -9,7 +9,7 @@ app = Flask(__name__)
 limiter = Limiter(
     app,
     key_func=get_remote_address,
-    default_limits=["200 per day", "50 per hour"]
+    default_limits=["400 per day", "100 per hour"]
 )
 
 NServer = "https://api.warsey.com"
@@ -27,6 +27,8 @@ def createsharecode():
         return render_template("error.html", errorcode = "1000 (Non-HTTP)", errormsg = "Missing Values/Parameters.")
     modeljson = '{"name": "' + name + '", "model": "' + model + '"}'
     code = sharecode.generatecode(str(modeljson))
+    if code == None:
+        return render_template("error.html", errorcode = "None", errormsg = "No Share codes available to assign at the moment, please try again later.")
     return redirect(f"/sharecode/{code['sharecode']}")
 
 @app.route("/sharecode/<code>")
@@ -35,7 +37,7 @@ def sharecodes(code):
         int(code)
     except:
         return render_template("error.html", errorcode = "1001 (Non-HTTP)", errormsg = "Invalid Share Code.")
-    if len(code) != 6:
+    if len(code) > 8:
         return render_template("error.html", errorcode = "1002 (Non-HTTP)", errormsg = "Invalid Share Code.")
     modelnonjson = sharecode.pullsharecodedata(code)
     if modelnonjson == False: 

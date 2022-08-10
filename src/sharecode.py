@@ -52,11 +52,18 @@ def pullsharecodedata(code):
 
 def generatenum():
     IsNotUnique = True
+    counter = 0
     while IsNotUnique:
-        num = random.randint(100000,999999)
+        if counter > 899995:
+            num = random.randint(999999,99999999)
+        elif counter > 99999998:
+            return None
+        else:
+            num = random.randint(100000,999999)
         if pullsharecodedata(num) == False:
             IsNotUnique = False
             return num
+        counter += 1
 
 def generatecode(modeljson):
     hash = hashit(modeljson)
@@ -64,5 +71,7 @@ def generatecode(modeljson):
     if chhash != False:
         return chhash
     sharecode = generatenum()
+    if sharecode == None:
+        return None
     addtodb(sharecode, modeljson, hash)
     return {"sharecode": sharecode, "modeljson": modeljson}
