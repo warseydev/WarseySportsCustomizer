@@ -47,6 +47,10 @@ def sharecodes(code):
     model = str(modeljson["model"])
     return render_template("sharecode.html", modelurl = f"{NServer}/api/design/tshirt?text={name}&template={model}", code = code, name = name, model = model)
 
+@app.route("/s/<code>")
+def redirectsc(code):
+    return redirect(f"/sharecode/{code}")
+
 @app.route("/content/<file>")
 def content(file):
     return send_file(f"files/{file}")

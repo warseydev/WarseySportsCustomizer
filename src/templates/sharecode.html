@@ -20,9 +20,15 @@
         <a href="/"><img src="/content/warsey-sport-solutions.webp" class="warseylogo"></a>
 		<h1 class="title">Your <span class="titletext">Personalized T-Shirt</span></h1>
 		<h2>SHARE CODE:</h2>
+		<div id="wrapper">
+		<div id="sharecodediv">
         <h1 id="codeshare" class="sharecode" onclick="copyToClipboard('codeshare');">{{ code }}<span class="copynotif" id="copynotif">Sharecode Copied!</span></h1>
         <span class="productId clickable" onclick="copyToClipboard('codeshare');">Click to copy.</span>
 		<p class="tshirtlink">T-Shirt Link: <a id="tshirtlink" href="#share" class="tshirtlinkspan"></a></p>
+		</div>
+		<div id="qrcodediv">
+		<div id="qrcode"></div>
+		</div></div>
 		<label>Name: {{ name }}</label>
         <label>Model: {{ model }}<a>[codename]</a></label>
         <p>You can use this Sharecode when adding your Supporter T-Shirt to cart on <a href="https://www.warseysports.com/shop/">Warsey Sports's Shop</a> or to share this Personalized T-Shirt to your friends or family (The link to this page may also be usable).</p>
@@ -35,11 +41,12 @@
 			  </svg>  Add To Cart</a>
 		</div>
         <input type="text" id="copyingText" style="visibility: hidden;"/>
+		<p id="sharecodep" style="display: none;">{{ code }}</p>
 	</div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 <script src="/content/sharecode.js"></script>
-<script src="/content/jquery.chained.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script id="rendered-js" src="/content/render.js"></script>
 </body>
 </html>

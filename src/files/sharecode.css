@@ -334,3 +334,31 @@ a {
   75%  {bottom: 40px; opacity: 0.25;}
   100% {bottom: 50px; opacity: 0; visibility: hidden;}
 }
+
+#wrapper {
+  overflow: hidden; 
+}
+#sharecodediv {
+  width: 300px;
+  float:left;
+}
+#qrcodediv {
+  float: left; 
+}
+
+#qrcode {
+  margin-top: 18%;
+  margin-left: 200px;
+}
+
+@media screen and (max-width: 800px) {
+  #qrcode {
+    display: none;
+  }
+  #qrcodediv {
+    display: none;
+  }
+  #sharecodediv {
+    width: auto;
+  }
+}

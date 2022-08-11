@@ -18,5 +18,15 @@ function CopiedAnimation() {
 }
 
 $(document).ready(function(){                                
-    document.getElementById("tshirtlink").textContent=window.location.href;
+    var sharecode = document.getElementById("sharecodep").textContent;
+    let shareurl=window.location.origin+"/s/"+sharecode; 
+    document.getElementById("tshirtlink").textContent=shareurl;
+    var qrc = new QRCode(document.getElementById("qrcode"), {
+        text: shareurl,
+        width: 100,
+        height: 100,
+        colorDark: "#1E9738",
+        colorLight: "#2b2b2b",
+        correctLevel : QRCode.CorrectLevel.H
+      });
 });
