@@ -9,7 +9,7 @@ app = Flask(__name__)
 limiter = Limiter(
     app,
     key_func=get_remote_address,
-    default_limits=["400 per day", "100 per hour"]
+    default_limits=["4000 per day", "500 per hour"]
 )
 
 NServer = "https://api.warsey.com"
