@@ -3,7 +3,7 @@ services:
   build:
     context: warsey-customizer
     dockerfile: Dockerfile
-  ports:
-    - "7000:7000"
-  volumes:
-    - /usr/share/warseyapps/warseycustomizer/:/usr/share/warseyapifrontend/db/:ro
+    ports:
+      - "7000:7000"
+    volumes:
+      - /usr/share/warseyapps/warseycustomizer/:/usr/share/warseyapifrontend/db/:ro
