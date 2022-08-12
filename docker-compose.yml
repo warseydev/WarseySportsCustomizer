@@ -3,7 +3,8 @@ services:
   warsey-customizer:
     restart: always
     build: .
+    container_name: warsey-customizer
     ports:
       - "7000:7000"
     volumes:
-      - ~/warseyapps-files/warseycustomizer:/usr/share/warseyapifrontend/db/:ro
+      - ~/warseyapps-files/warseycustomizer:/usr/share/warseyapifrontend/db/:z
