@@ -5,10 +5,10 @@ import base64
 import os.path
 
 def checkdb():
-    if os.path.exists("db/sharecodes.db"):
+    if os.path.exists("/usr/share/warseyapifrontend/sharecodes.db"):
         return
     else:
-        connection_obj = sqlite3.connect('sharecodes.db')
+        connection_obj = sqlite3.connect('/usr/share/warseyapifrontend/sharecodes.db')
         cursor_obj = connection_obj.cursor()
         cursor_obj.execute("DROP TABLE IF EXISTS SHARECODE")
         cursor_obj.execute("DROP TABLE IF EXISTS SCHASH")
@@ -22,7 +22,6 @@ def checkdb():
                     Hash CHAR(100) NOT NULL
                 ); """
         cursor_obj.execute(table)
-        print("ShareCode DB Is Ready, saved to sharecodes.db")
         connection_obj.close()
 
 def addtodb(code, modeljson, hash):
