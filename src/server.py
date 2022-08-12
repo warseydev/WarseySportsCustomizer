@@ -14,6 +14,8 @@ limiter = Limiter(
 
 NServer = "https://api.warsey.com"
 
+sharecode.checkdb()
+
 @app.route("/")
 def home():
     return render_template("index.html")

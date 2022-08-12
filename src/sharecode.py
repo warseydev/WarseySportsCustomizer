@@ -2,10 +2,32 @@ import sqlite3
 import hashlib
 import random
 import base64
+import os.path
+
+def checkdb():
+    if os.path.exists("db/sharecodes.db"):
+        return
+    else:
+        connection_obj = sqlite3.connect('sharecodes.db')
+        cursor_obj = connection_obj.cursor()
+        cursor_obj.execute("DROP TABLE IF EXISTS SHARECODE")
+        cursor_obj.execute("DROP TABLE IF EXISTS SCHASH")
+        table = """ CREATE TABLE SHARECODE (
+                    Sharecode INT,
+                    ModelJson CHAR(100) NOT NULL
+                ); """
+        cursor_obj.execute(table)
+        table = """ CREATE TABLE SCHASH (
+                    Sharecode INT,
+                    Hash CHAR(100) NOT NULL
+                ); """
+        cursor_obj.execute(table)
+        print("ShareCode DB Is Ready, saved to sharecodes.db")
+        connection_obj.close()
 
 def addtodb(code, modeljson, hash):
     code = str(code)
-    conn = sqlite3.connect('sharecodes.db')
+    conn = sqlite3.connect('db/sharecodes.db')
     cursor = conn.cursor()
     hashcmd = f"INSERT INTO SCHASH VALUES ('{code}', '{hash}')"
     namecmd = f"INSERT INTO SHARECODE VALUES ('{code}', '{modeljson}')"
@@ -20,7 +42,7 @@ def hashit(modeljson):
     return result.hexdigest()
 
 def checkifexisthash(hash):
-    conn = sqlite3.connect('sharecodes.db')
+    conn = sqlite3.connect('db/sharecodes.db')
     cur = conn.cursor()
     cur.execute("""SELECT Hash FROM SCHASH WHERE Hash=?""",(hash,))
     result = cur.fetchone()
@@ -36,7 +58,7 @@ def checkifexisthash(hash):
     
 def pullsharecodedata(code):
     str(code)
-    conn = sqlite3.connect('sharecodes.db')
+    conn = sqlite3.connect('db/sharecodes.db')
     cur = conn.cursor()
     cur.execute("""SELECT Sharecode FROM SHARECODE WHERE Sharecode=?""",(code,))
     result = cur.fetchone()
